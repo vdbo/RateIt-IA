@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
@@ -6,13 +6,16 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion Versions.androidTargetSdk
 
+
+
     defaultConfig {
-        applicationId "com.vdbo.rateitia"
-        minSdkVersion Versions.androidMinSdk
-        targetSdkVersion Versions.androidTargetSdk
+        minSdkVersion 21
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -22,20 +25,10 @@ android {
         }
     }
 
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-        test.java.srcDirs += 'src/test/kotlin'
-    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-    implementation project(':core')
-
-    implementation Dependencies.appCompat
-    implementation Dependencies.constraintLayout
-    implementation Dependencies.rxBinding2
     implementation Dependencies.room
     implementation Dependencies.roomRxJava2
     kapt Dependencies.daggerCompiler
