@@ -11,7 +11,7 @@ interface MovieDetailComponent {
 
     @Subcomponent.Builder interface Builder {
 
-        fun build()
+        fun build(): MovieDetailComponent
 
     }
 

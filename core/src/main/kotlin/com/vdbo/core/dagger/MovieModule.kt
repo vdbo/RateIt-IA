@@ -7,6 +7,7 @@ import javax.inject.Singleton
 
 @Module class MovieModule {
 
-    @Singleton @Provides fun bindMovieDao(database: RDatabase) = database.movieDao()
+    @Singleton @Provides
+    fun bindMovieLocalDao(database: RDatabase) = database.movieDao()
 
 }

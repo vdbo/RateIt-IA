@@ -13,7 +13,7 @@ object Versions {
     const val rxKotlin = "2.3.0"
     const val rxAndroid = "2.1.0"
     const val rxBinding = "3.0.0-alpha2"
-    const val room = "2.0.0"
+    const val room = "2.1.0-alpha03"
     const val archComponents = "2.0.0"
     const val junit = "4.12"
 }

@@ -9,7 +9,6 @@ class MoviesOverviewViewModel @Inject constructor(
 ) : ViewModel() {
 
     fun getMovies() {
-        movieRepository.getMovies()
     }
 
 }
