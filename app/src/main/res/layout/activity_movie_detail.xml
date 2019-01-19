@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="@dimen/material_16"
-            android:numStars="5"
+            android:numStars="10"
             tools:rating="2.5" />
 
     </LinearLayout>
