@@ -1,10 +1,8 @@
 package com.vdbo.core.dagger
 
 import android.content.Context
-import androidx.lifecycle.ViewModelProvider
 import androidx.room.Room
 import com.vdbo.core.data.RDatabase
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

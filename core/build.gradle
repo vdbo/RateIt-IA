@@ -3,6 +3,9 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
+apply from: '../shared_dependencies.gradle'
+apply from: '../test_dependencies.gradle'
+
 android {
     compileSdkVersion Versions.androidTargetSdk
 
@@ -31,17 +34,11 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation Dependencies.room
     implementation Dependencies.roomRxJava2
-    kapt Dependencies.daggerCompiler
     kapt Dependencies.roomCompiler
-    kapt Dependencies.archComponentsCompiler
     api Dependencies.kotlinLibrary
     api Dependencies.archComponents
     api Dependencies.dagger
     api Dependencies.rxJava2
     api Dependencies.rxKotlin
     api Dependencies.rxAndroid2
-    testImplementation Dependencies.junit
-    testImplementation Dependencies.mockito
-    testImplementation Dependencies.roomTesting
-    testImplementation Dependencies.archComponentsTesting
 }

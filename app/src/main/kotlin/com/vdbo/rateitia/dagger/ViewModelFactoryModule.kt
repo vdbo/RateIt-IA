@@ -1,4 +1,4 @@
-package com.vdbo.core.dagger
+package com.vdbo.rateitia.dagger
 
 import androidx.lifecycle.ViewModelProvider
 import dagger.Binds

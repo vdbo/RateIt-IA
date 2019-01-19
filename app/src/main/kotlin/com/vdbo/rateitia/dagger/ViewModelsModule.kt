@@ -1,14 +1,13 @@
-package com.vdbo.rateitia.ui.main
+package com.vdbo.rateitia.dagger
 
 import androidx.lifecycle.ViewModel
-import com.vdbo.core.dagger.ViewModelFactoryModule
-import com.vdbo.core.dagger.ViewModelKey
+import com.vdbo.rateitia.main.MainViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
 
 @Module(includes = [ViewModelFactoryModule::class])
-interface ViewModelModule {
+interface ViewModelsModule {
 
     @Binds
     @IntoMap

@@ -1,0 +1,4 @@
+dependencies {
+    kapt Dependencies.daggerCompiler
+    kapt Dependencies.archComponentsCompiler
+}
