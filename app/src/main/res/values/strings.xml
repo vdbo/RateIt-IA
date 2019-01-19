@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">RateIt-IA</string>
+    <string name="movies">Movies</string>
+    <string name="sort_descending">Sort Descending</string>
+    <string name="sort_ascending">Sort Ascending</string>
+    <string name="submit">Submit</string>
 </resources>

@@ -1,5 +1,5 @@
 object Versions {
-    const val gradleBuildTools = "3.2.1"
+    const val gradleBuildTools = "3.3.0"
     const val kotlin = "1.3.11"
     const val androidMinSdk = 21
     const val androidTargetSdk = 28

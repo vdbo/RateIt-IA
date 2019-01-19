@@ -1,10 +1,10 @@
-package com.vdbo.rateitia.main
+package com.vdbo.rateitia.movies.overview
 
 import androidx.lifecycle.ViewModel
 import com.vdbo.core.data.movie.MovieRepository
 import javax.inject.Inject
 
-class MainViewModel @Inject constructor(
+class MoviesOverviewViewModel @Inject constructor(
     private val movieRepository: MovieRepository
 ) : ViewModel() {
 
