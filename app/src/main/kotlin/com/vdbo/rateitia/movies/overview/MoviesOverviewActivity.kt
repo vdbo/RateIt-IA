@@ -1,5 +1,7 @@
 package com.vdbo.rateitia.movies.overview
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -30,6 +32,14 @@ class MoviesOverviewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movies_overview)
         setUpUi()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        when (requestCode) {
+            MovieDetailsActivity.REQUEST_CODE -> {
+                if (resultCode == Activity.RESULT_OK) viewModel.onMovieEdited()
+            }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

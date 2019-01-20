@@ -5,7 +5,9 @@ import io.reactivex.Single
 
 interface MovieDataSource {
 
-    fun get(sortType: SortType = SortType.DESC): Single<List<Movie>>
+    fun get(sortType: SortType): Single<List<Movie>>
+
+    fun get(id: Int): Single<Movie>
 
     fun edit(movie: Movie): Completable
 

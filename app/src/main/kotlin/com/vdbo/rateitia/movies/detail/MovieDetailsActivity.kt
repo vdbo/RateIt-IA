@@ -6,7 +6,11 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import com.jakewharton.rxbinding3.widget.ratingChanges
 import com.vdbo.rateitia.R
+import com.vdbo.rateitia.RApplication
 import kotlinx.android.synthetic.main.activity_movie_details.*
 
 class MovieDetailsActivity : AppCompatActivity() {
@@ -22,6 +26,10 @@ class MovieDetailsActivity : AppCompatActivity() {
 
     }
 
+    private val viewModel: MovieDetailsViewModel by lazy(LazyThreadSafetyMode.NONE) {
+        ViewModelProviders.of(this, RApplication.appComponent.viewModelFactory)
+            .get(MovieDetailsViewModel::class.java)
+    }
     private val movieId by lazy(LazyThreadSafetyMode.NONE) {
         intent.getIntExtra(EXTRA_MOVIE_ID, 0)
     }
@@ -30,11 +38,18 @@ class MovieDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_details)
         setUpUi()
+        observeChanges()
+        viewModel.onCreate(movieId)
     }
 
-    override fun onNavigateUp(): Boolean {
-        onBackPressed()
-        return super.onNavigateUp()
+    override fun onStart() {
+        super.onStart()
+        viewModel.onViewActive()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        viewModel.onViewNotActive()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -43,12 +58,39 @@ class MovieDetailsActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-        R.id.action_submit -> TODO()
+        android.R.id.home -> {
+            onBackPressed()
+            true
+        }
+        R.id.action_submit -> {
+            viewModel.onSubmit()
+            true
+        }
         else -> true
     }
 
     private fun setUpUi() {
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        viewModel.rating = rating.ratingChanges()
+            .skipInitialValue()
+            .share()
+    }
+
+    private fun observeChanges() {
+        viewModel.movie.observe(this, Observer {
+            mainTitle.text = it.title
+            description.text = it.description
+            rating.rating = it.rating
+        })
+
+        viewModel.navigateOnSubmit.observe(this, Observer {
+            it.consume {
+                setResult(RESULT_OK)
+                finish()
+            }
+        })
     }
 
 }

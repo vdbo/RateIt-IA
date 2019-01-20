@@ -16,6 +16,10 @@ class MovieRepository @Inject constructor(
             .subscribeOn(schedulers.io())
     }
 
+    override fun get(id: Int) = movieLocalDao.get(id)
+        .subscribeOn(schedulers.io())
+
     override fun edit(movie: Movie) = movieLocalDao.edit(movie)
+        .subscribeOn(schedulers.io())
 
 }

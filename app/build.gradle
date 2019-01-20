@@ -40,6 +40,9 @@ dependencies {
 
     implementation project(':core')
     implementation Dependencies.appCompat
+    implementation Dependencies.materialDesignLibrary
     implementation Dependencies.constraintLayout
-    implementation Dependencies.rxBinding2
+    implementation Dependencies.rxBindingPlatform
+    implementation Dependencies.rxBindingCore
+    implementation Dependencies.rxBindingAppCompat
 }

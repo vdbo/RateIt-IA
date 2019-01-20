@@ -10,4 +10,8 @@
         android:icon="@drawable/ic_sort_desc"
         android:title="@string/sort_descending"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_random_rating"
+        android:title="@string/random_rating"
+        app:showAsAction="ifRoom" />
 </menu>
