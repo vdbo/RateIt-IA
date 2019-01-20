@@ -25,4 +25,7 @@ import javax.inject.Singleton
         }
     }).build()
 
+    @Singleton @Provides
+    fun provideSchedulerProvider(appSchedulers: CoreSchedulers): SchedulerProvider = appSchedulers
+
 }

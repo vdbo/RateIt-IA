@@ -3,13 +3,14 @@ package com.vdbo.core.data.movie
 import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Update
+import io.reactivex.Completable
 import io.reactivex.Single
 
 @Dao
 interface MovieLocalDao {
 
     companion object {
-        const val SCRIPT_PREFILL = "INSERT INTO Category " +
+        const val SCRIPT_PREFILL = "INSERT INTO movie " +
                 "(title, description, rating) VALUES " +
                 "(\"The Shawshank Redemption\", \"Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.\", \"9.3\"), " +
                 "(\"The Godfather\", \"The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.\", \"9.2\"), " +
@@ -23,10 +24,13 @@ interface MovieLocalDao {
                 "(\"Inception\", \"A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.\", \"8.8\")"
     }
 
-    @Query("SELECT * FROM movie")
-    fun get(): Single<List<Movie>>
+    @Query("SELECT * FROM movie ORDER BY rating DESC")
+    fun getDesc(): Single<List<Movie>>
+
+    @Query("SELECT * FROM movie ORDER BY rating ASC")
+    fun getAsc(): Single<List<Movie>>
 
     @Update
-    fun edit(movie: Movie): Single<Int>
+    fun edit(movie: Movie): Completable
 
 }

@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".movies.detail.MovieDetailActivity"
+            android:name=".movies.detail.MovieDetailsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateHidden" />

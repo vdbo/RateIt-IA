@@ -1,17 +1,34 @@
 package com.vdbo.rateitia.movies.detail
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.vdbo.rateitia.R
-import kotlinx.android.synthetic.main.activity_movie_detail.*
+import kotlinx.android.synthetic.main.activity_movie_details.*
 
-class MovieDetailActivity : AppCompatActivity() {
+class MovieDetailsActivity : AppCompatActivity() {
+
+    companion object {
+
+        private const val EXTRA_MOVIE_ID = "movie_id"
+        const val REQUEST_CODE = 1
+
+        fun newIntent(context: Context, movieId: Int) =
+            Intent(context, MovieDetailsActivity::class.java)
+                .apply { putExtra(EXTRA_MOVIE_ID, movieId) }
+
+    }
+
+    private val movieId by lazy(LazyThreadSafetyMode.NONE) {
+        intent.getIntExtra(EXTRA_MOVIE_ID, 0)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_movie_detail)
+        setContentView(R.layout.activity_movie_details)
         setUpUi()
     }
 

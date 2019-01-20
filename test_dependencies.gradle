@@ -1,6 +1,4 @@
 dependencies {
     testImplementation Dependencies.junit
-    testImplementation Dependencies.mockito
-    testImplementation Dependencies.roomTesting
-    testImplementation Dependencies.archComponentsTesting
+    testImplementation Dependencies.mockk
 }

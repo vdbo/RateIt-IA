@@ -6,12 +6,12 @@ import dagger.Binds
 import dagger.Subcomponent
 import dagger.multibindings.IntoMap
 
-@Subcomponent(modules = [MovieDetailComponent.Module::class])
-interface MovieDetailComponent {
+@Subcomponent(modules = [MovieDetailsComponent.Module::class])
+interface MovieDetailsComponent {
 
     @Subcomponent.Builder interface Builder {
 
-        fun build(): MovieDetailComponent
+        fun build(): MovieDetailsComponent
 
     }
 
@@ -19,8 +19,8 @@ interface MovieDetailComponent {
 
         @Binds
         @IntoMap
-        @ViewModelKey(MovieDetailViewModel::class)
-        fun bindMovieDetailViewModel(movieDetailViewModel: MovieDetailViewModel): ViewModel
+        @ViewModelKey(MovieDetailsViewModel::class)
+        fun bindMovieDetailsViewModel(movieDetailsViewModel: MovieDetailsViewModel): ViewModel
 
     }
 

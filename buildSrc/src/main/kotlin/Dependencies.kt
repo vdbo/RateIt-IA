@@ -16,6 +16,7 @@ object Versions {
     const val room = "2.1.0-alpha03"
     const val archComponents = "2.0.0"
     const val junit = "4.12"
+    const val mockk = "1.9"
 }
 
 object Dependencies {
@@ -28,7 +29,7 @@ object Dependencies {
     val androidKtx = "androidx.core:core-ktx:${Versions.androidKtx}"
     val rxJava2 = "io.reactivex.rxjava2:rxjava:${Versions.rxJava2}"
     val rxKotlin = "io.reactivex.rxjava2:rxkotlin:${Versions.rxKotlin}"
-    val rxAndroid2 = "io.reactivex.rxjava2:rxjava:${Versions.rxAndroid}"
+    val rxAndroid2 = "io.reactivex.rxjava2:rxandroid:${Versions.rxAndroid}"
     val rxBinding2 = "com.jakewharton.rxbinding3:rxbinding-material:${Versions.rxBinding}"
     val room = "androidx.room:room-runtime:${Versions.room}"
     val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
@@ -36,6 +37,7 @@ object Dependencies {
     val archComponents = "androidx.lifecycle:lifecycle-extensions:${Versions.archComponents}"
     val archComponentsCompiler = "androidx.lifecycle:lifecycle-compiler:${Versions.archComponents}"
     val junit = "junit:junit:${Versions.junit}"
+    val mockk = "io.mockk:mockk:${Versions.mockk}"
     val mockito = "org.mockito:mockito-core:${Versions.mockito}"
     val roomTesting = "androidx.room:room-testing:${Versions.room}"
     val archComponentsTesting = "androidx.arch.core:core-testing:${Versions.archComponents}"

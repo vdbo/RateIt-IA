@@ -8,6 +8,7 @@ import javax.inject.Singleton
 @Component(modules = [CoreModule::class, MovieModule::class])
 interface CoreComponent {
 
+    val coreSchedulers: SchedulerProvider
     val movieDao: MovieLocalDao
 
 }
