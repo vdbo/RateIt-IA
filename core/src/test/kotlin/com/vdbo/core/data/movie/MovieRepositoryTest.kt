@@ -1,5 +1,6 @@
 package com.vdbo.core.data.movie
 
+import com.vdbo.core.common.SortType
 import com.vdbo.core.dagger.TestSchedulers
 import io.mockk.every
 import io.mockk.mockk

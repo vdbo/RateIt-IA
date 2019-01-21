@@ -61,6 +61,10 @@ class MoviesOverviewActivity : AppCompatActivity() {
             viewModel.onAscSortChosen()
             true
         }
+        R.id.action_random_rating -> {
+            viewModel.onRandomRatingChosen()
+            true
+        }
         else -> true
     }
 

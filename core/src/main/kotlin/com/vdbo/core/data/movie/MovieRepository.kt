@@ -1,5 +1,6 @@
 package com.vdbo.core.data.movie
 
+import com.vdbo.core.common.SortType
 import com.vdbo.core.dagger.SchedulerProvider
 import io.reactivex.Single
 import javax.inject.Inject

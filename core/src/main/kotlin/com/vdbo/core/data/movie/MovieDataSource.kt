@@ -1,5 +1,6 @@
 package com.vdbo.core.data.movie
 
+import com.vdbo.core.common.SortType
 import io.reactivex.Completable
 import io.reactivex.Single
 

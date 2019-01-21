@@ -1,4 +1,4 @@
-package com.vdbo.core.data.movie
+package com.vdbo.core.common
 
 enum class SortType(val value: String) {
     DESC("DESC"), ASC("ASC")
